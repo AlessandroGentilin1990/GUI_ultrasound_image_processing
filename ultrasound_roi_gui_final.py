@@ -350,8 +350,8 @@ class UltrasoundGUI:
         def import_excel():
             nonlocal t_above, v_above, t_below, v_below, filename, excel_path
             path = filedialog.askopenfilename(
-                title="Seleziona file Excel",
-                filetypes=[("Excel files", "*.xlsx *.xls")]
+                title="Select image",
+                filetypes=[("Image files", ("*.png", "*.jpg", "*.jpeg", "*.bmp", "*.tif", "*.tiff"))]
             )
             if not path:
                 return
