@@ -153,7 +153,7 @@ class UltrasoundGUI:
 
     # -------------------- Import --------------------
     def import_image(self):
-        path = filedialog.askopenfilename(title="Seleziona immagine", filetypes=[("Image files","*.png;*.jpg;*.jpeg;*.bmp;*.tif;*.tiff")])
+        path = filedialog.askopenfilename(title="Seleziona immagine", filetypes=[("Image files", "*.png *.jpg *.jpeg *.bmp *.tif *.tiff")])
         if not path: return
         try:
             img = Image.open(path)
@@ -183,7 +183,8 @@ class UltrasoundGUI:
 
         proc_win = tk.Toplevel(self.root)
         proc_win.title("Processamento sotto-ROI")
-        proc_win.state('zoomed')  # massimizza finestra
+        # proc_win.state('zoomed')  # massimizza finestra
+        proc_win.attributes('-zoomed', True)  # su Windows
 
         # Intercetta la chiusura della finestra per non chiudere la GUI principale
         proc_win.protocol("WM_DELETE_WINDOW", proc_win.destroy)
@@ -350,7 +351,7 @@ class UltrasoundGUI:
             nonlocal t_above, v_above, t_below, v_below, filename, excel_path
             path = filedialog.askopenfilename(
                 title="Seleziona file Excel",
-                filetypes=[("Excel files", "*.xlsx;*.xls")]
+                filetypes=[("Excel files", "*.xlsx *.xls")]
             )
             if not path:
                 return
