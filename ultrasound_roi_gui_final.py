@@ -16,7 +16,7 @@ import openpyxl
 from openpyxl import Workbook
 from tkinter import filedialog, messagebox
 import scipy.signal
-
+from matplotlib import pyplot as plt
 
 # ---------------------------- Data containers ----------------------------
 @dataclass
