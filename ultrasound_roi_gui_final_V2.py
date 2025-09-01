@@ -186,7 +186,7 @@ class UltrasoundGUI:
 
         proc_win = tk.Toplevel(self.root)
         proc_win.title("Processamento sotto-ROI")
-        proc_win.attributes('-zoomed', True)  # su Windows
+        # proc_win.attributes('-zoomed', True)  # su Windows
         # per macOS: "massimizza" via geometry al display size
         proc_win.update_idletasks()
         w = proc_win.winfo_screenwidth()
